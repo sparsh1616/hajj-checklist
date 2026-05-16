@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hajj Packing Checklist 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9952A;
+    --gold-light: #E8C97A;
+    --green: #1A6B3C;
+    --green-light: #2D9B5A;
+    --cream: #FDF8EF;
+    --dark: #1C1C1C;
+    --text: #3A3A3A;
+    --border: #E5D8BC;
+    --checked-bg: #F0FAF4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--green) 0%, #0F4A2A 100%);
+    padding: 36px 24px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .arabic-title {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+  .header h1 {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .header p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.82rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(201,149,42,0.25);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .progress-bar {
+    background: var(--green);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+  .progress-track {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 4px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .progress-text {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 80px;
+    text-align: right;
+  }
+
+  .tabs {
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid var(--border);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex: none;
+    padding: 12px 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #888;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .tab.active {
+    color: var(--green);
+    border-bottom-color: var(--green);
+  }
+  .tab:hover { color: var(--green); }
+
+  .content { padding: 0 0 80px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .section {
+    margin: 16px 14px 0;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .section-header {
+    background: linear-gradient(90deg, var(--green) 0%, #1E7A44 100%);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-icon { font-size: 1.2rem; }
+  .section-title {
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+    flex: 1;
+  }
+  .section-count {
+    font-size: 0.72rem;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #F5EFE4;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none;
+  }
+  .item:last-child { border-bottom: none; }
+  .item:hover { background: #FEFAF3; }
+  .item.checked { background: var(--checked-bg); }
+
+  .checkbox {
+    width: 22px; height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    transition: all 0.2s;
+    background: #fff;
+  }
+  .item.checked .checkbox {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .checkmark {
+    color: #fff;
+    font-size: 0.75rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s;
+  }
+  .item.checked .checkmark { opacity: 1; transform: scale(1); }
+
+  .item-content { flex: 1; }
+  .item-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+  .item.checked .item-name {
+    color: #888;
+    text-decoration: line-through;
+  }
+  .item-note {
+    font-size: 0.72rem;
+    color: #999;
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.4px;
+  }
+  .tag-m { background: #E3F0FF; color: #2563EB; }
+  .tag-f { background: #FFE9F3; color: #C026D3; }
+  .tag-all { background: #F0FFF4; color: #16A34A; }
+  .tag-imp { background: #FFF3E0; color: #EA580C; }
+
+  .note-card {
+    margin: 14px 14px 0;
+    background: linear-gradient(135deg, #FFF8E7, #FDF3D7);
+    border: 1px solid var(--gold);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .note-card h3 {
+    font-family: 'Amiri', serif;
+    color: var(--green);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .note-card ul { padding-left: 18px; }
+  .note-card li {
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .reset-btn {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(201,149,42,0.4);
+    transition: all 0.2s;
+    z-index: 200;
+  }
+  .reset-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,149,42,0.5); }
+
+  .qty-note {
+    font-size: 0.68rem;
+    background: #F0FFF4;
+    color: var(--green);
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-left: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="arabic-title">??? ???? ?????? ??????</div>
+  <h1>Hajj Packing Checklist</h1>
+  <p>Hajj Committee of India · 19 Days · 3 Pilgrims</p>
+  <div class="badge-row">
+    <span class="badge">You</span>
+    <span class="badge">Wife</span>
+    <span class="badge">Mother-in-Law</span>
+  </div>
+</div>
+
+<div class="progress-bar">
+  <span style="color:rgba(255,255,255,0.8);font-size:0.78rem;white-space:nowrap">Packed</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-text" id="progressText">0 / 0</div>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab active" data-panel="docs">Documents</div>
+  <div class="tab" data-panel="ihram">Ihram</div>
+  <div class="tab" data-panel="clothing">Clothing</div>
+  <div class="tab" data-panel="toiletries">Toiletries</div>
+  <div class="tab" data-panel="medical">Medical</div>
+  <div class="tab" data-panel="essentials">Essentials</div>
+  <div class="tab" data-panel="food">Food</div>
+  <div class="tab" data-panel="tips">Tips</div>
+</div>
+
+<div class="content" id="content">
+
+<!-- DOCUMENTS -->
+<div class="panel active" id="panel-docs">
+  <div class="note-card">
+    <h3>Keep originals + 3 photocopies of all docs</h3>
+    <ul>
+      <li>Store one set in hotel safe, carry one, leave one set at home</li>
+      <li>Keep digital scans on phone + email to yourself</li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">Docs</span>
+      <span class="section-title">Identity & Travel Documents</span>
+      <span class="section-count" id="count-docs"></span>
+    </div>
+    <div id="list-docs">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Passport (valid min. 6 months) <span class="tag tag-all">ALL 3</span></div><div class="item-note">Check expiry dates well in advance</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Hajj Visa (in passport) <span class="tag tag-all">ALL 3</span></div><div class="item-note">Issued by Haj Committee of India</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Haj Committee ID Card / Yatra Card <span class="tag tag-all">ALL 3</span></div><div class="item-note">Provided by your state Haj Committee</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Meningitis Vaccination Certificate <span class="tag tag-all">ALL 3</span></div><div class="item-note">Mandatory for Saudi entry</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Aadhaar Card / Voter ID (photocopy) <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Flight Tickets (print + digital) <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Hotel / accommodation vouchers</div><div class="item-note">Makkah & Madinah addresses with phone numbers</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Mahram Certificate (for wife & mother-in-law) <span class="tag tag-imp">IMPORTANT</span></div><div class="item-note">You are the mahram for both; carry proof</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Travel Insurance Policy</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Emergency contact list (laminated card)</div><div class="item-note">Indian Consulate Jeddah, Haj Committee helpline, family contacts</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Passport-size photos (6 each) <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Medical history / prescription letter from doctor</div><div class="item-note">Especially for elderly mother-in-law</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- IHRAM -->
+<div class="panel" id="panel-ihram">
+  <div class="note-card">
+    <h3>Ihram Rules Reminder</h3>
+    <ul>
+      <li>Men: 2 unstitched white sheets (rida + izar) — wear on plane or at Miqat</li>
+      <li>Women: Any modest, loose, full-coverage clothing — their normal abaya serves as ihram</li>
+      <li>Wear ihram before crossing Miqat (usually before landing in Jeddah)</li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">Ihram</span>
+      <span class="section-title">Ihram Essentials</span>
+      <span class="section-count" id="count-ihram"></span>
+    </div>
+    <div id="list-ihram">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Ihram cloth sets <span class="tag tag-m">MEN</span> <span class="qty-note">3 sets</span></div><div class="item-note">2 white unstitched sheets per set; buy extra — they get soiled in Mina</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Ihram belt / money belt <span class="tag tag-m">MEN</span></div><div class="item-note">To secure ihram and carry valuables safely</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Safety pins (large pack)</div><div class="item-note">For men's ihram & women's hijab/abaya</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Unscented soap & shampoo <span class="tag tag-all">ALL 3</span></div><div class="item-note">Mandatory during ihram state — no perfumed products</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Unscented lotion / sunscreen <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Slippers / sandals (open-toe) <span class="tag tag-m">MEN</span></div><div class="item-note">Must not cover the anklebone during ihram</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Scissors (small, for post-Hajj hair cutting)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Hajj guide / dua booklet</div><div class="item-note">With duas for Tawaf, Sa'i, Mina, Arafat, etc.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOTHING -->
+<div class="panel" id="panel-clothing">
+  <div class="note-card">
+    <h3>Clothing Tips</h3>
+    <ul>
+      <li>Pack light — laundry facilities available in hotels</li>
+      <li>Saudi heat is extreme (40–45°C); breathable cotton is essential</li>
+      <li>Mina tents can be cold at night — carry a light shawl</li>
+      <li>Label all clothes with your name & group number</li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">M</span>
+      <span class="section-title">Men's Clothing</span>
+      <span class="section-count" id="count-men"></span>
+    </div>
+    <div id="list-men">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Kurta-Pyjama / Salwar sets <span class="qty-note">7–8 sets</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Topi / Kufi (prayer cap) <span class="qty-note">3–4</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Underwear (cotton) <span class="qty-note">8–10</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Socks <span class="qty-note">6–8 pairs</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Comfortable walking shoes</div><div class="item-note">Slip-on preferred for easy wudu removal</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Sandals / chappals (everyday)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Light jacket / shawl (for AC & cool nights)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Belt</div></div></div>
+    </div>
+  </div>
+  <div class="section" style="margin-top:12px">
+    <div class="section-header">
+      <span class="section-icon">W</span>
+      <span class="section-title">Women's Clothing (Wife + Mother-in-Law)</span>
+      <span class="section-count" id="count-women"></span>
+    </div>
+    <div id="list-women">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Abayas (dark/plain) <span class="tag tag-f">EACH</span> <span class="qty-note">4–5 each</span></div><div class="item-note">Loose, non-perfumed for ihram period</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Hijabs / Scarves <span class="tag tag-f">EACH</span> <span class="qty-note">6–8 each</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Inner clothing (salwar-kameez / cotton sets) <span class="qty-note">6–7 each</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Cotton bras & underwear <span class="qty-note">8–10 each</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Socks <span class="qty-note">6–8 pairs each</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Comfortable flat walking shoes <span class="tag tag-f">EACH</span></div><div class="item-note">Slip-on style; no heels — lots of walking!</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Sandals / chappals <span class="tag tag-f">EACH</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Light shawl / wrap (for AC & cool nights)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Prayer mat (travel-size, foldable)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Hair clips / pins (non-metal for security checks)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOILETRIES -->
+<div class="panel" id="panel-toiletries">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">Kit</span>
+      <span class="section-title">Toiletries & Personal Care</span>
+      <span class="section-count" id="count-toiletries"></span>
+    </div>
+    <div id="list-toiletries">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Toothbrush & toothpaste <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Miswak (for ihram purity) <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Unscented soap bars / liquid soap</div><div class="item-note">Use during ihram; regular soap after</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Shampoo (travel bottles) <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Deodorant (unscented for ihram)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Sunscreen SPF 50+ <span class="tag tag-all">ALL 3</span></div><div class="item-note">Essential — Saudi sun is harsh</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Lip balm (with SPF)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Talcum powder / prickly heat powder</div><div class="item-note">Prevents heat rash in high humidity</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Comb / hairbrush <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Nail clipper</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Small mirror</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Tissues / wet wipes (travel packs)</div><div class="item-note">Many public restrooms lack toilet paper</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Hand sanitizer</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Razor / shaving kit</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Sanitary pads / personal hygiene items <span class="tag tag-f">WOMEN</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Small towel / face towel <span class="tag tag-all">ALL 3</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MEDICAL -->
+<div class="panel" id="panel-medical">
+  <div class="note-card">
+    <h3>Medical Tips</h3>
+    <ul>
+      <li>Carry all prescription medicines in original packaging</li>
+      <li>Keep a written list of allergies & medical conditions</li>
+      <li>Elderly pilgrims: carry extra doses of critical medicines</li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">Med</span>
+      <span class="section-title">Medical Kit</span>
+      <span class="section-count" id="count-medical"></span>
+    </div>
+    <div id="list-medical">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Prescription medicines (in original containers)</div><div class="item-note">Enough for 19 days + 3 extra days</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Pain relievers (Paracetamol / Ibuprofen)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Anti-diarrhea medicine (Imodium / Lomotil)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Antacids / gas relief</div><div class="item-note">Dietary changes often cause acidity</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Cold & flu medicine</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Cough lozenges / throat soothers</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Antihistamines (for allergies)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">ORS / electrolyte packets</div><div class="item-note">Dehydration is common — critical in heat</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Band-aids / adhesive bandages</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Antiseptic cream (Dettol / Savlon)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Blister pads / moleskin</div><div class="item-note">Lots of walking causes foot blisters</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Thermometer</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Inhaler (if needed for asthma)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Blood pressure monitor (for mother-in-law) <span class="tag tag-imp">ELDERLY</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Glucometer & strips (if diabetic)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Reading glasses (spare pair)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ESSENTIALS -->
+<div class="panel" id="panel-essentials">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">Bag</span>
+      <span class="section-title">Essential Items</span>
+      <span class="section-count" id="count-essentials"></span>
+    </div>
+    <div id="list-essentials">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Suitcase / main luggage <span class="tag tag-all">ALL 3</span></div><div class="item-note">Check airline weight limits (usually 23kg)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Cabin bag / carry-on <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Small backpack (for day trips)</div><div class="item-note">For Mina/Arafat — carry essentials only</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Money belt / waist pouch</div><div class="item-note">Keep passport, money, phone secure</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Padlock (for luggage)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Plastic bags / ziplock bags</div><div class="item-note">For wet clothes, toiletries, organizing</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Laundry bag</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Water bottle (collapsible)</div><div class="item-note">Zamzam water available everywhere</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Umbrella (white/silver for sun protection)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Prayer mat (travel-size)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Qibla compass / app on phone</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Flashlight / headlamp</div><div class="item-note">Useful for night trips in Mina/Muzdalifah</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Pen & small notepad</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Luggage tags with contact info</div></div></div>
+    </div>
+  </div>
+  <div class="section" style="margin-top:12px">
+    <div class="section-header">
+      <span class="section-icon">Tech</span>
+      <span class="section-title">Electronics</span>
+      <span class="section-count" id="count-electronics"></span>
+    </div>
+    <div id="list-electronics">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Smartphone <span class="tag tag-all">ALL 3</span></div><div class="item-note">Install Hajj apps, Google Translate, offline maps</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Phone charger & cable <span class="tag tag-all">ALL 3</span></div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Power bank (20,000+ mAh)</div><div class="item-note">Essential for long days in Mina/Arafat</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Saudi power adapter (Type G)</div><div class="item-note">Saudi uses UK-style 3-pin sockets</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Earphones</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">SIM card (Saudi tourist SIM)</div><div class="item-note">Available at airport on arrival</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOD -->
+<div class="panel" id="panel-food">
+  <div class="note-card">
+    <h3>Food Tips</h3>
+    <ul>
+      <li>Hotels provide meals, but packing snacks helps during long transit</li>
+      <li>Avoid perishable items — Saudi customs may confiscate</li>
+      <li>Pack comfort foods for elderly pilgrims</li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">Food</span>
+      <span class="section-title">Food & Snacks</span>
+      <span class="section-count" id="count-food"></span>
+    </div>
+    <div id="list-food">
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Dates / khajoor</div><div class="item-note">Great for quick energy; also sunnah</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Dry fruits (almonds, walnuts, raisins)</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Biscuits / crackers</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Instant noodles (cup noodles)</div><div class="item-note">For late-night hunger; hot water available</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Tea bags / instant coffee</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Sugar / sweetener packets</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Instant oatmeal / cereal</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Namkeen / savory snacks (Indian)</div><div class="item-note">Sev, bhujia, chakli — comfort food</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Energy bars / granola bars</div></div></div>
+      <div class="item"><div class="checkbox"><span class="checkmark">?</span></div><div class="item-content"><div class="item-name">Small plastic containers (for leftovers)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="panel" id="panel-tips">
+  <div class="note-card">
+    <h3>Important Hajj Tips</h3>
+    <ul>
+      <li>Stay with your group at all times — crowds are massive</li>
+      <li>Drink Zamzam water regularly — it's blessed and refreshing</li>
+      <li>Rest when possible — Hajj is physically demanding</li>
+      <li>Keep small Saudi Riyals for tips and small purchases</li>
+    </ul>
+  </div>
+  <div class="note-card" style="background: linear-gradient(135deg, #E8F5E9, #F1F8E9);">
+    <h3>Money Matters</h3>
+    <ul>
+      <li>Carry 500–1000 SAR per person for emergencies</li>
+      <li>Use Saudi Riyals; Indian Rupees not accepted</li>
+      <li>Forex cards work at ATMs in Saudi</li>
+      <li>Exchange some money at Indian airport for immediate needs</li>
+    </ul>
+  </div>
+  <div class="note-card" style="background: linear-gradient(135deg, #E3F2FD, #F3E5F5);">
+    <h3>Safety Reminders</h3>
+    <ul>
+      <li>Photocopy all documents and keep separate from originals</li>
+      <li>Memorize your hotel name and group number in Arabic</li>
+      <li>Indian Haj Mission helpline: +966-XXXX-XXXXX</li>
+      <li>Mark luggage with unique ribbons for easy identification</li>
+      <li>Women: avoid carrying heavy bags — use rolling luggage</li>
+    </ul>
+  </div>
+  <div class="note-card" style="background: linear-gradient(135deg, #FFF8E1, #FFECB3);">
+    <h3>Health During Hajj</h3>
+    <ul>
+      <li>Wear mask in crowded areas — prevent respiratory infections</li>
+      <li>Apply sunscreen every 2–3 hours</li>
+      <li>Break in your walking shoes before the trip</li>
+      <li>Elderly pilgrims: take rest breaks every 30 minutes of walking</li>
+      <li>Report any fever immediately to medical camps</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<button class="reset-btn" onclick="resetAll()">Reset All</button>
+
+<script>
+const STORAGE_KEY = 'hajj-checklist-v1';
+
+// Tab switching
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.panel');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const panelId = tab.dataset.panel;
+    
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    
+    tab.classList.add('active');
+    document.getElementById('panel-' + panelId).classList.add('active');
+  });
+});
+
+// Toggle checkbox
+function toggle(item) {
+  item.classList.toggle('checked');
+  saveState();
+  updateProgress();
+}
+
+// Update progress bar
+function updateProgress() {
+  const allItems = document.querySelectorAll('.item');
+  const checkedItems = document.querySelectorAll('.item.checked');
+  const total = allItems.length;
+  const checked = checkedItems.length;
+  const percent = total > 0 ? (checked / total) * 100 : 0;
+  
+  document.getElementById('progressFill').style.width = percent + '%';
+  document.getElementById('progressText').textContent = checked + ' / ' + total;
+}
+
+// Save state to localStorage
+function saveState() {
+  const state = {};
+  document.querySelectorAll('.item').forEach((item, index) => {
+    state[index] = item.classList.contains('checked');
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+// Load state from localStorage
+function loadState() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const state = JSON.parse(saved);
+    document.querySelectorAll('.item').forEach((item, index) => {
+      if (state[index]) {
+        item.classList.add('checked');
+      }
+    });
+  }
+}
+
+// Reset all checkboxes
+function resetAll() {
+  if (confirm('Uncheck all items? This cannot be undone.')) {
+    document.querySelectorAll('.item').forEach(item => {
+      item.classList.remove('checked');
+    });
+    localStorage.removeItem(STORAGE_KEY);
+    updateProgress();
+  }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  updateProgress();
+});
+</script>
+</body>
+</html>
